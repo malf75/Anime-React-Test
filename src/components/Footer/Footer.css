@@ -1,0 +1,30 @@
+.footer{
+    background-color: #ff914d;
+    background-image: url('/public/imagens/Fundo.png');
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.logo{
+    margin-top: -20px;
+}
+
+.logo img{
+    width: 140px;
+}
+
+.gh{
+    margin-right: 4em;
+}
+
+.ig{
+    margin-left: 4em;
+}
+
+.text{
+    color: #FFFFFF;
+    font-size: 20px;
+}
