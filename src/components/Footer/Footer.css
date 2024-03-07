@@ -30,7 +30,7 @@
 }
 
 @media screen and (max-width:450px) {
-    .text{
+    .footer .text{
         display: none;
     }
 }
