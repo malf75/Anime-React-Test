@@ -58,7 +58,6 @@ function App() {
   const [animes, setAnimes] = useState([])
 
   const onNewAnime = (anime) => {
-    console.log(anime)
     localStorage.setItem("animes", JSON.stringify([...animes, anime]))
     setAnimes((prevAnimes) => [...prevAnimes, anime])
   }
