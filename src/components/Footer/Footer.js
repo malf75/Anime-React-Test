@@ -12,7 +12,7 @@ function Footer(){
                 <h4>Desenvolvido por MaLf</h4>
             </div>
             <div className='logo'>
-                <img src='/imagens/paw.gif' alt='Gif'/>
+                <img src='./imagens/paw.gif' alt='Gif'/>
             </div>
         </section>   
     )
