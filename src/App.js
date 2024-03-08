@@ -7,7 +7,7 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
 
-  const [genres, setGenres] = useState([
+  const [genres] = useState([
     {
       name: 'Action',
       PrimaryColor: '#B80000',
