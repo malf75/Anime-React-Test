@@ -8,7 +8,9 @@ function Genre(props){
         props.animes.length > 0 && <section className='genre' style={css}>
             <h3 style={{borderColor: props.primaryColor}}>{props.name}</h3>
             <div className='animes'>
-                {props.animes.map( anime => <Anime backgroundColor={props.primaryColor} key={anime.name} image={anime.image} name={anime.name} genre={anime.genre} />)}
+                {props.animes.map( anime =>  {
+                    return <Anime backgroundColor={props.primaryColor} key={anime.name} image={anime.image} name={anime.name} genre={anime.genre} onDelete={props.onDelete} />
+                })}
             </div>
         </section>
     )

@@ -7,7 +7,7 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
 
-  const genres = [
+  const [genres, setGenres] = useState([
     {
       name: 'Action',
       PrimaryColor: '#B80000',
@@ -53,13 +53,19 @@ function App() {
       PrimaryColor: '#B5C0D0',
       SecondaryColor: '#C9CCD1'
     },
-  ]
+  ])
 
   const [animes, setAnimes] = useState([])
 
   const onNewAnime = (anime) => {
     localStorage.setItem("animes", JSON.stringify([...animes, anime]))
     setAnimes((prevAnimes) => [...prevAnimes, anime])
+  }
+
+  function deleteAnime(name){
+    const updatedAnimes = animes.filter(anime => anime.name !== name);
+    setAnimes(updatedAnimes);
+    localStorage.setItem("animes", JSON.stringify(updatedAnimes));
   }
 
   useEffect(() => {
@@ -73,7 +79,7 @@ function App() {
     <div className="App">
       <Banner/>
       <Form genres={genres.map(genre => genre.name)} onAnimeChanged={anime => onNewAnime(anime)}/>
-      {genres.map(genre => <Genre key={genre.name} name={genre.name} primaryColor={genre.PrimaryColor} secondaryColor={genre.SecondaryColor} animes={animes.filter(anime => anime.genre === genre.name)}/>)}
+      {genres.map(genre => <Genre key={genre.name} name={genre.name} primaryColor={genre.PrimaryColor} secondaryColor={genre.SecondaryColor} animes={animes.filter(anime => anime.genre === genre.name)} onDelete={deleteAnime}/>)}
       <Footer/>
     </div>
   );
